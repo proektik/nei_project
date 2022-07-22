@@ -10,18 +10,18 @@
         android:id="@+id/icon"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:src="@mipmap/ic_launcher_round"
-        app:layout_constraintBottom_toTopOf="@id/title_log_in"
+        app:layout_constraintBottom_toTopOf="@id/title_sign_up"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
         app:srcCompat="@drawable/logo_orange"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/title_log_in"
+        android:id="@+id/title_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -38,13 +38,13 @@
         android:id="@+id/title_Phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/Dark_blue"
         android:layout_marginTop="20dp"
         android:text="@string/phone_number"
+        android:textColor="@color/Dark_blue"
         app:layout_constraintBottom_toTopOf="@id/phone_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_log_in"
+        app:layout_constraintTop_toBottomOf="@id/title_sign_up"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -52,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/your_phone"
+        app:layout_constraintBottom_toTopOf="@id/title_Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_Phone"
@@ -77,6 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/your_password"
+        app:layout_constraintBottom_toTopOf="@id/title_Firstname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_Password"
@@ -106,9 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_Firstname"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="277dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/title_Secondname"
@@ -128,6 +128,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/your_second_name"
+        app:layout_constraintBottom_toTopOf="@id/title_floor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_Secondname"
@@ -153,6 +154,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/your_floor"
+        app:layout_constraintBottom_toTopOf="@id/gender_choice"
         app:layout_constraintEnd_toStartOf="@id/flat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_floor"
@@ -191,7 +193,7 @@
         android:layout_marginTop="4dp"
         android:text="@string/gender"
         android:textColor="@color/Dark_blue"
-        app:layout_constraintBottom_toTopOf="@id/male"
+        app:layout_constraintBottom_toTopOf="@id/gender_choice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -204,47 +206,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/Dark_blue"
+        app:layout_constraintBottom_toTopOf="@id/OK_signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_gender"
+
         tools:ignore="MissingConstraints">
 
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="93dp"
+            android:layout_height="44dp"
+            android:text="@string/female"
+            android:textColor="@color/Dark_blue"
+            app:layout_constraintBottom_toBottomOf="@id/male"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/male"
+            app:layout_constraintTop_toTopOf="@+id/male"
+            tools:ignore="MissingConstraints" />
+
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="85dp"
+            android:layout_height="39dp"
+            android:text="@string/male"
+            android:textColor="@color/Dark_blue"
+            app:layout_constraintBottom_toBottomOf="@id/gender_choice"
+            app:layout_constraintEnd_toStartOf="@+id/female"
+            app:layout_constraintHorizontal_bias="0.575"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_gender"
+            tools:ignore="MissingConstraints" />
     </RadioGroup>
 
-    <RadioButton
-        android:id="@+id/female"
-        android:layout_width="93dp"
-        android:layout_height="44dp"
-        android:text="@string/female"
-        android:textColor="@color/Dark_blue"
-        app:layout_constraintBottom_toBottomOf="@id/male"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/male"
-        app:layout_constraintTop_toTopOf="@+id/male"
-        tools:ignore="MissingConstraints" />
-
-    <RadioButton
-        android:id="@+id/male"
-        android:layout_width="85dp"
-        android:layout_height="39dp"
-        android:text="@string/male"
-        android:textColor="@color/Dark_blue"
-        app:layout_constraintBottom_toTopOf="@id/OK_signup"
-        app:layout_constraintEnd_toStartOf="@+id/female"
-        app:layout_constraintHorizontal_bias="0.575"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_gender"
-        tools:ignore="MissingConstraints" />
 
     <Button
 
         android:id="@+id/OK_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/Dark_blue"
         android:text="@string/ok"
         android:textColor="@color/light_orange"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"

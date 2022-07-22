@@ -12,11 +12,13 @@
         android:layout_width="250dp"
         android:layout_height="100dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@id/button_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
         app:srcCompat="@drawable/logo_text" />
 
     <ImageButton
@@ -27,6 +29,7 @@
         app:layout_constraintEnd_toStartOf="@id/button_neighbours"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/icon_with_name"
+        app:layout_constraintBottom_toTopOf="@id/button_chat"
         app:layout_constraintVertical_bias="0.206"
         tools:srcCompat="@tools:sample/avatars" />
 
